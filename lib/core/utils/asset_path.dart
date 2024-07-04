@@ -1,0 +1,141 @@
+class ImageAssetPath {
+  static const String rasanLogoPath = 'assets/images/rasan_logo.png';
+  static const String mobileLogoPath = 'assets/images/mobile.png';
+  static const String nepalFlag = 'assets/images/nepali_flag.png';
+  static const String nepalFlag1 = 'assets/images/nepali_flag1.png';
+  static const String usaFlag = 'assets/images/us_flag.png';
+  static const String viewAll = 'assets/images/view_all.png';
+  static const String gifts = 'assets/images/gifts.png';
+  static const String house = 'assets/images/house.png';
+  static const String mobile = 'assets/images/mobile1.png';
+  static const String stars = 'assets/images/stars.png';
+  static const String invoice = 'assets/images/invoice.png';
+  static const String voucher = 'assets/images/voucher.png';
+  static const String lineChart = 'assets/images/line-chart.png';
+  static const String greyPerson = 'assets/images/person.png';
+  static const String document = 'assets/images/document.png';
+  static const String location = 'assets/images/location.png';
+  static const String tick = 'assets/images/tick.png';
+  static const String updated = 'assets/images/updated.png';
+  static const String pdf = 'assets/images/pdf_sample.png';
+  static const String cod = 'assets/images/cod.png';
+  static const String bankDeposit = 'assets/images/bank_deposit.png';
+  static const String connectIps = 'assets/images/connect_ips.png';
+  static const String esewa = 'assets/images/esewa.png';
+  static const String khalti = 'assets/images/khalti.png';
+  static const String fonepay = 'assets/images/fonepay.png';
+  static const String credit = 'assets/images/credit.png';
+  static const String noImage = 'assets/images/no_image.png';
+  static const String noItemsPath = 'assets/images/no_items.png';
+  static const String sampleImage = 'assets/images/sample_photo.png';
+  static const String aboutUs = 'assets/images/about_us.png';
+  static const String noWifi = 'assets/images/no_wifi.png';
+}
+
+class IconAssetPath {
+  static const String menuIconPath = 'assets/icons/menu.svg';
+  static const String rasanIconPath = 'assets/icons/rasan-logo.svg';
+  static const String notificationIconPath = 'assets/icons/notification.svg';
+  static const String searchIconPath = 'assets/icons/search.svg';
+  static const String categoryIconPath = 'assets/icons/category.svg';
+  static const String brandIconPath = 'assets/icons/brands.svg';
+  static const String rasanChoiceIconPath = 'assets/icons/rasan_choice.svg';
+  static const String homeIconPath = 'assets/icons/home.svg';
+  static const String bagIconPath = 'assets/icons/bag.svg';
+  static const String sortIconPath = 'assets/icons/sort.svg';
+  static const String filterIconPath = 'assets/icons/filter.svg';
+  static const String starIconPath = 'assets/icons/star.svg';
+  static const String dollarIconPath = 'assets/icons/dollar.svg';
+  static const String editIconPath = 'assets/icons/edit.svg';
+  static const String helpIconPath = 'assets/icons/help.svg';
+  static const String favouriteIconPath = 'assets/icons/heart.svg';
+  static const String favouriteFillIconPath = 'assets/icons/heart_fill.svg';
+  static const String infoIconPath = 'assets/icons/info.svg';
+  static const String intelligenceIconPath = 'assets/icons/intelligence.svg';
+  static const String languageIconPath = 'assets/icons/language.svg';
+  static const String logoutIconPath = 'assets/icons/logout.svg';
+  static const String loyaltyIconPath = 'assets/icons/loyalty.svg';
+  static const String luckyDrawIconPath = 'assets/icons/luckydraw.svg';
+  static const String ordersIconPath = 'assets/icons/orders.svg';
+  static const String policyIconPath = 'assets/icons/policy.svg';
+  static const String termsIconPath = 'assets/icons/terms.svg';
+  static const String profileIconPath = 'assets/icons/profile.svg';
+  static const String referIconPath = 'assets/icons/refer.svg';
+  static const String mobileInHandIconPath = 'assets/icons/mobile_in_hand.svg';
+  static const String updateIconPath = 'assets/icons/update.svg';
+  static const String logout1IconPath = 'assets/icons/logout1.svg';
+  static const String sendIconPath = 'assets/icons/send.svg';
+  static const String thanksIconPath = 'assets/icons/thanks.svg';
+  static const String boxIconPath = 'assets/icons/box.svg';
+  static const String emptyOrdersPath = 'assets/icons/empty_orders.svg';
+  static const String calendarIconPath = 'assets/icons/calendar.svg';
+  static const String returnIconPath = 'assets/icons/return.svg';
+  static const String eyeIconPath = 'assets/icons/eye.svg';
+  static const String invoiceIconPath = 'assets/icons/invoice.svg';
+  static const String feedbackIconPath = 'assets/icons/feedback.svg';
+  static const String imagePickerIconPath = 'assets/icons/image_picker.svg';
+  static const String basketIconPath = 'assets/icons/basket.svg';
+  static const String removeIconPath = 'assets/icons/remove.svg';
+  static const String checkoutIconPath = 'assets/icons/checkout.svg';
+  static const String checkoutIconPath1 = 'assets/icons/checkout1.svg';
+  static const String codIconPath = 'assets/icons/cod.svg';
+  static const String bankDepositIconPath = 'assets/icons/bank_deposit.svg';
+  static const String connectIpsIconPath = 'assets/icons/connect_ips.svg';
+  static const String esewaIconPath = 'assets/icons/esewa.svg';
+  static const String fonepayIconPath = 'assets/icons/fonepay.svg';
+  static const String successIconPath = 'assets/icons/success.svg';
+  static const String trashIconPath = 'assets/icons/trash.svg';
+  static const String couponIconPath = 'assets/icons/coupon.svg';
+  static const String tagIconPath = 'assets/icons/tag.svg';
+  static const String locationBoxPath = 'assets/icons/location_box.svg';
+  static const String voucherPath = 'assets/icons/voucher.svg';
+  static const String orderHistoryPath = 'assets/icons/order_history.svg';
+  static const String rasanInsightsPath = 'assets/icons/rasan_insights.svg';
+  static const String noItemsPath = 'assets/icons/no_items.svg';
+  static const String arrowRightPath = 'assets/icons/arrow_right.svg';
+  static const String arrowRightCirclePath =
+      'assets/icons/arrow_right_circle.svg';
+  static const String expand = 'assets/icons/expand.svg';
+  static const String collapse = 'assets/icons/collapse.svg';
+  static const String facebook = 'assets/icons/facebook.svg';
+  static const String instagram = 'assets/icons/instagram.svg';
+  static const String youtube = 'assets/icons/youtube.svg';
+  static const String twitter = 'assets/icons/twitter.svg';
+  static const String tiktok = 'assets/icons/tiktok.svg';
+  static const String appstore = 'assets/icons/app_store.svg';
+  static const String playstore = 'assets/icons/play_store.svg';
+  static const String loyaltyPointsStar = 'assets/icons/loyalty_point_star.svg';
+  static const String loyaltyPointsHistoryEmpty =
+      'assets/icons/loyalty_history_empty.svg';
+  static const String noScheme = 'assets/icons/no_scheme.svg';
+  static const String libraryAddCheck = 'assets/icons/library_add_check.svg';
+  static const String loyaltyRedeemSuccessGift =
+      'assets/icons/loyalty_success_gift.svg';
+  static const String forecast = 'assets/icons/forecast.svg';
+  static const String noTickets = 'assets/icons/no_tickets.svg';
+  static const String contactUsLogo = 'assets/icons/contact_us_logo.svg';
+  static const String cloud = 'assets/icons/cloud.svg';
+  static const String calling = 'assets/icons/calling.svg';
+  static const String email = 'assets/icons/mail.svg';
+  static const String location = 'assets/icons/location.svg';
+  static const String contactUsHelp = 'assets/icons/contact_us_help.svg';
+  static const String contactUsFeedback =
+      'assets/icons/contact_us_feedback.svg';
+  static const String contactUsTicket = 'assets/icons/contact_us_ticket.svg';
+
+  ///Notification Images...
+  static const String genericNotification =
+      'assets/icons/generic_notification.svg';
+  static const String itemCancelled = 'assets/icons/item_cancelled.svg';
+  static const String itemDelivered = 'assets/icons/item_delivered.svg';
+  static const String loyaltyPointReceived =
+      'assets/icons/loyalty_point_received.svg';
+  static const String luckyDrawBlue = 'assets/icons/lucky_draw_blue.svg';
+  static const String luckyDrawOrange = 'assets/icons/lucky_draw_orange.svg';
+  static const String offerNotification = 'assets/icons/offer_notification.svg';
+  static const String orderPlaced = 'assets/icons/order_placed.svg';
+  static const String shipmentReady = 'assets/icons/shipment_ready.svg';
+  static const String userProfile = 'assets/icons/user_profile.svg';
+  static const String offer = 'assets/icons/offer.svg';
+  static const String deliveryStatus = 'assets/icons/delivery_started.svg';
+}
