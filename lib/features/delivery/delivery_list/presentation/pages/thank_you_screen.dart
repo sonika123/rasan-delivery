@@ -3,9 +3,12 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
+import 'package:permission_handler/permission_handler.dart';
 import '../../../../../core/constants/app_constants.dart';
 import '../../../../../core/theme/colors.dart';
+import '../../../../../core/utils/app_permission_handler.dart';
 import '../../../../../core/utils/map_utils.dart';
 import '../../domain/entities/delivery_details_response.dart';
 
@@ -157,7 +160,7 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
                   InkWell(
                     onTap: () {
                       //send current location
-                      // sendLocation();
+                      sendLocation();
                       // Get.offAllNamed(AppRoutes.deliveryListScreen);
                     },
                     child: Container(
@@ -187,7 +190,7 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
   }
 
 
-  /*void sendLocation() async {
+  void sendLocation() async {
     late bool status;
     if (Platform.isIOS) {
       await Permission.location.status.isGranted;
@@ -196,11 +199,13 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
       status = await AppPermissionHandler.hasLocationPermission(Get.context!);
     }
     if (status) {
+      print("status is $status");
       final position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high,
       );
 
       print("sonika location latitude is ${position.latitude} and longitude is ${position.longitude}");
+
       // _locationController.lat.value = position.latitude;
       // _locationController.long.value = position.longitude;
       // addMarker(
@@ -211,5 +216,4 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
       // );
     }
   }
-*/
 }

@@ -1,4 +1,3 @@
-/*
 import 'dart:async';
 import 'dart:io';
 
@@ -46,4 +45,4 @@ class AppPermissionHandler {
 
     return status == PermissionStatus.granted;
   }
-}*/
+}

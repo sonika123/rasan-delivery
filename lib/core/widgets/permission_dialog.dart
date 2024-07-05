@@ -1,4 +1,3 @@
-/*
 // import 'package:android_intent/android_intent.dart';
 // ignore_for_file: implementation_imports
 
@@ -158,4 +157,3 @@ class PermissionDialog extends StatelessWidget {
     );
   }
 }
-*/
