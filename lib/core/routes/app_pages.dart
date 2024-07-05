@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:rasan_delivery/core/routes/app_routes.dart';
+import 'package:rasan_delivery/features/about_us/about_us_bindings.dart';
+import 'package:rasan_delivery/features/about_us/presentation/pages/about_us_screen.dart';
 import 'package:rasan_delivery/features/authentication/otp/otp_bindings.dart';
 import 'package:rasan_delivery/features/authentication/otp/presentation/pages/otp_screen.dart';
 import 'package:rasan_delivery/features/delivery/delivery_list/presentation/pages/delivery_details_screen.dart';
@@ -10,6 +12,8 @@ import 'package:rasan_delivery/features/delivery/delivery_list/presentation/page
 import 'package:rasan_delivery/features/delivery/delivery_list/presentation/pages/delivery_list_screen.dart';
 import '../../features/authentication/mobile_number/mobile_number_bindings.dart';
 import '../../features/authentication/mobile_number/presentation/pages/mobile_number_screen.dart';
+import '../../features/profile/profile_home_screen/presentation/pages/profile_home_screen.dart';
+import '../../features/profile/profile_home_screen/profile_bindings.dart';
 import '../../main.dart';
 
 class AppPages {
@@ -29,7 +33,7 @@ class AppPages {
     GetPage(
       name: AppRoutes.deliveryListScreen,
       page: () => const DeliveryListScreen(),
-      binding: DeliveryBindings(),
+      bindings: [DeliveryBindings(), ProfileBindings()],
     ),
 
     GetPage(
@@ -55,6 +59,15 @@ class AppPages {
       binding: DeliveryBindings(),
     ),
 
+    GetPage(
+        name: AppRoutes.profileScreen,
+        page: () => const ProfileScreen(),
+        binding: ProfileBindings()),
+
+    GetPage(
+        name: AppRoutes.aboutUsScreen,
+        page: () => AboutUsScreen(),
+        binding: AboutUsBindings()),
     //TODO change terms and conditions page
     GetPage(
         name: AppRoutes.termsAndConditionScreen,

@@ -10,4 +10,5 @@ class AppRoutes {
    static const deliveryListByOrderidScreen = '/deliveryDetailsByOrderidScreen';
    static const deliveryStartedScreen = '/deliveryStartedScreen';
    static const thankYouScreen = '/thankYouScreen';
+   static const profileScreen = '/profileScreen';
 }

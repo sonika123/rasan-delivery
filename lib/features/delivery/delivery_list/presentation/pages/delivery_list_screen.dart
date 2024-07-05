@@ -11,6 +11,7 @@ import 'package:rasan_delivery/features/delivery/delivery_list/presentation/widg
 import 'package:rasan_delivery/features/delivery/delivery_list/presentation/widgets/shimmer_widget.dart';
 import '../../../../../core/widgets/custom_error_widget.dart';
 import '../../../../drawer/presentation/pages/custom_drawer.dart';
+import '../../../../profile/profile_home_screen/presentation/controllers/profile_controller.dart';
 
 //this is delivery list screen
 class DeliveryListScreen extends StatefulWidget {
@@ -24,10 +25,13 @@ class _DeliveryListScreenState extends State<DeliveryListScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final DeliveryListController _deliveryListController = Get.find();
+  final ProfileController _profileController = Get.find();
 
   @override
   void initState() {
     _deliveryListController.getDeliveryList();
+    _profileController.getUserProfile();
+
     super.initState();
   }
 

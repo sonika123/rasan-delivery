@@ -3,9 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+
+import '../../../../core/base_response/base_state/base_state.dart';
+import '../../../../core/network_services/endpoints/endpoints.dart';
 import '../../../../core/routes/app_routes.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/utils/asset_path.dart';
+import '../../../../core/widgets/custom_error_widget.dart';
+import '../../../profile/profile_home_screen/domain/entities/response/user_profile/user_profile_response.dart';
+import '../../../profile/profile_home_screen/presentation/controllers/profile_controller.dart';
 import '../widgets/custom_drawer_row.dart';
 import 'logout_screen.dart';
 
@@ -26,7 +32,7 @@ class CustomDrawer extends StatelessWidget {
 }
 
 class UpperContainer extends StatelessWidget {
-  // final ProfileController _profileController = Get.find();
+  final ProfileController _profileController = Get.find();
 
   UpperContainer({
     Key? key,
@@ -34,8 +40,8 @@ class UpperContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return Obx(() {
-      return /* _profileController.baseState.value is BaseLoading
+    return Obx(() {
+      return _profileController.baseState.value is BaseLoading
           ? Container(
         height: 184.h,
         color: AppColors.primaryColor,
@@ -45,7 +51,7 @@ class UpperContainer extends StatelessWidget {
       )
           : _profileController.baseState.value is BaseError
           ? const CustomErrorWidget()
-          :*/ Container(
+          : Container(
         padding: EdgeInsets.only(
             left: 24.w, right: 24.w, top: 30.h, bottom: 24.h),
         color: AppColors.primaryColor,
@@ -53,7 +59,7 @@ class UpperContainer extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                // Get.toNamed(AppRoutes.profileScreen);
+                Get.toNamed(AppRoutes.profileScreen);
               },
               child: Row(
                 children: [
@@ -78,13 +84,13 @@ class UpperContainer extends StatelessWidget {
                               ImageAssetPath.greyPerson),
                         );
                       },
-                      // imageUrl: Endpoints.imageBaseUrl +
-                      //     (((_profileController.baseState.value
-                      //     as BaseSuccess)
-                      //         .data as UserProfileData)
-                      //         .profile_picture
-                      //         ?.full_size ??
-                      //         ''),
+                      imageUrl: Endpoints.imageBaseUrl +
+                          (((_profileController.baseState.value
+                          as BaseSuccess)
+                              .data as UserProfileData)
+                              .profile_picture
+                              ?.full_size ??
+                              ''),
                       imageBuilder: (context, img) {
                         return CircleAvatar(
                           backgroundColor: AppColors.greyTextColor
@@ -92,7 +98,7 @@ class UpperContainer extends StatelessWidget {
                           radius: 40,
                           backgroundImage: img,
                         );
-                      }, imageUrl: '',
+                      },
                     ),
                   ),
                   SizedBox(
@@ -105,17 +111,16 @@ class UpperContainer extends StatelessWidget {
                         Row(
                           children: [
                             Expanded(
-                              child: Text("User name",
-                                // ((_profileController.baseState.value
-                                // as BaseSuccess)
-                                //     .data as UserProfileData)
-                                //     .full_name ??
-                                //     ((_profileController.baseState
-                                //         .value as BaseSuccess)
-                                //         .data as UserProfileData)
-                                //         .phone,
-                                style: Theme
-                                    .of(context)
+                              child: Text(
+                                ((_profileController.baseState.value
+                                as BaseSuccess)
+                                    .data as UserProfileData)
+                                    .full_name ??
+                                    ((_profileController.baseState
+                                        .value as BaseSuccess)
+                                        .data as UserProfileData)
+                                        .phone,
+                                style: Theme.of(context)
                                     .textTheme
                                     .headlineSmall
                                     ?.copyWith(
@@ -125,53 +130,8 @@ class UpperContainer extends StatelessWidget {
                           ],
                         ),
                         const SizedBox(height: 10),
-                        Row(
-                          children: [
-                            SvgPicture.asset(
-                              IconAssetPath.starIconPath,
-                              height: 18,
-                              width: 18,
-                              colorFilter: const ColorFilter.mode(
-                                AppColors.whiteColor,
-                                BlendMode.srcIn,
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 6,
-                            ),
-                            Text(
-                              '${'0'} ${'points'.tr}',
-                              style: Theme
-                                  .of(context)
-                                  .textTheme
-                                  .bodyLarge
-                                  ?.copyWith(
-                                  color: AppColors.whiteColor),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 8),
-                        Row(
-                          children: [
-                            SvgPicture.asset(
-                              IconAssetPath.dollarIconPath,
-                              height: 18,
-                              width: 18,
-                            ),
-                            const SizedBox(
-                              width: 6,
-                            ),
-                            Text(
-                              '${'rs'.tr} ${'0'} ${'cashback'.tr}',
-                              style: Theme
-                                  .of(context)
-                                  .textTheme
-                                  .bodyLarge
-                                  ?.copyWith(
-                                  color: AppColors.whiteColor),
-                            ),
-                          ],
-                        ),
+
+
                       ],
                     ),
                   )
@@ -183,7 +143,7 @@ class UpperContainer extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                // Get.toNamed(AppRoutes.editProfileScreen);
+                // Get.toNamed(AppRoutes.AppRouteseditProfileScreen);
               },
               child: Row(
                 children: [
@@ -194,10 +154,8 @@ class UpperContainer extends StatelessWidget {
                   ),
                   Expanded(
                     child: Text(
-                      // getUserAddress(),
-                      "User address",
-                      style: Theme
-                          .of(context)
+                      getUserAddress(),
+                      style: Theme.of(context)
                           .textTheme
                           .titleLarge
                           ?.copyWith(
@@ -205,7 +163,7 @@ class UpperContainer extends StatelessWidget {
                           fontWeight: FontWeight.w500),
                     ),
                   ),
-                  Padding(
+                  /*Padding(
                     padding:
                     const EdgeInsets.symmetric(horizontal: 12),
                     child: SvgPicture.asset(
@@ -213,17 +171,17 @@ class UpperContainer extends StatelessWidget {
                       height: 18,
                       width: 18,
                     ),
-                  ),
+                  ),*/
                 ],
               ),
             )
           ],
         ),
       );
-    // });
+    });
   }
 
-/* String getUserAddress() => ((_profileController.baseState.value
+  String getUserAddress() => ((_profileController.baseState.value
   as BaseSuccess)
       .data as UserProfileData)
       .addresses ==
@@ -234,9 +192,8 @@ class UpperContainer extends StatelessWidget {
           .isEmpty
       ? 'n/a'.tr
       : '${((_profileController.baseState.value as BaseSuccess).data as UserProfileData).addresses?.first.province.name}, ${((_profileController.baseState.value as BaseSuccess).data as UserProfileData).addresses?.first.city.name}, ${((_profileController.baseState.value as BaseSuccess).data as UserProfileData).addresses?.first.area.name}';
-
-*/
 }
+
 class LowerContainer extends StatefulWidget {
   const LowerContainer({Key? key}) : super(key: key);
 
@@ -248,6 +205,20 @@ class _LowerContainerState extends State<LowerContainer> {
   String? appVersionNumber = '';
 
   @override
+  void initState() {
+    // getAppVersionNumber();
+    super.initState();
+  }
+
+/*  getAppVersionNumber() async {
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    String version = packageInfo.version;
+    setState(() {
+      appVersionNumber = version;
+    });
+  }*/
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       padding:
@@ -255,52 +226,38 @@ class _LowerContainerState extends State<LowerContainer> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          CustomDrawerRow(
-            title: 'loyalty_points',
-            iconPath: IconAssetPath.loyaltyPointsStar,
-            onTap: () {
-              // Get.toNamed(AppRoutetes.loyaltyPointsScreen);
-            },
+          // CustomDrawerRow(
+          //     title: 'Offers',
+          //     iconPath: IconAssetPath.offer,
+          //     onTap: (){}),
+          /*CustomDrawerRow(
+            title: 'lucky_draw_coupons',
+            iconPath: IconAssetPath.luckyDrawIconPath,
+            onTap: () {},
           ),
-          Divider(
+          const SizedBox(
+            height: 6,
+          ),*/
+          // CustomDrawerRow(
+          //   title: 'loyalty_points',
+          //   iconPath: IconAssetPath.loyaltyPointsStar,
+          //   onTap: () {
+          //     Get.toNamed(AppRoutes.loyaltyPointsScreen);
+          //   },
+          // ),
+         /* Divider(
             color: AppColors.borderColor,
             thickness: 1.1,
-          ),
-          SizedBox(
+          ),*/
+          /*SizedBox(
             height: 24.h,
-          ),
+          ),*/
           CustomDrawerRow(
             title: 'profile',
             iconPath: IconAssetPath.profileIconPath,
             onTap: () {
-              // Get.toNamed(AppRoutes.profileScreen);
+              Get.toNamed(AppRoutes.profileScreen);
             },
-          ),
-          CustomDrawerRow(
-            title: 'my_orders',
-            iconPath: IconAssetPath.ordersIconPath,
-            onTap: () {
-              // Get.toNamed(
-              // AppRoutes.myOrdersScreen,
-              }
-            ),
-
-          CustomDrawerRow(
-            title: 'language',
-            iconPath: IconAssetPath.languageIconPath,
-            onTap: () {
-              // Get.toNamed(AppRoutes.languageSelectionScreen, arguments: true);
-            },
-          ),
-          const SizedBox(
-            height: 6,
-          ),
-          Divider(
-            color: AppColors.borderColor,
-            thickness: 1.1,
-          ),
-          SizedBox(
-            height: 24.h,
           ),
 
           CustomDrawerRow(
@@ -324,6 +281,11 @@ class _LowerContainerState extends State<LowerContainer> {
               Get.toNamed(AppRoutes.termsAndConditionScreen);
             },
           ),
+          /* CustomDrawerRow(
+            title: 'loyalty_offers',
+            iconPath: IconAssetPath.editIconPath,
+            onTap: () {},
+          ),*/
           const SizedBox(
             height: 6,
           ),

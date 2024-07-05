@@ -247,7 +247,7 @@ class LanguageTranslation extends Translations {
           'read_more': 'Read More',
           'about_us': 'About Us',
           'about_us_message':
-              'We Lalabala Technologies Pvt Ltd is an online B2B supply chain management company. We are a professional & experienced team, who have contributed more than decades to Information Technology, Digital Marketing, Sales, and Logistic industries. ',
+              'We Rasan Technologies Pvt Ltd is an online B2B supply chain management company. We are a professional & experienced team, who have contributed more than decades to Information Technology, Digital Marketing, Sales, and Logistic industries. ',
           'our_happy_retailers': 'Our Happy Retailers',
           'stories_of_our_retailers': 'Stories Of Our Retailers',
           'follow_us_on': 'Follow us on',
@@ -568,7 +568,7 @@ class LanguageTranslation extends Translations {
           'read_more': 'Read More',
           'about_us': 'About Us',
           'about_us_message':
-              'We Lalabala is an online B2B supply chain management company. We are a professional & experienced team, who have contributed more than decades to Information Technology, Digital Marketing, Sales, and Logistic industries. ',
+              'We Rasan is an online B2B supply chain management company. We are a professional & experienced team, who have contributed more than decades to Information Technology, Digital Marketing, Sales, and Logistic industries. ',
           'our_happy_retailers': 'Our Happy Retailers',
           'stories_of_our_retailers': 'Stories Of Our Retailers',
           'follow_us_on': 'Follow us on',

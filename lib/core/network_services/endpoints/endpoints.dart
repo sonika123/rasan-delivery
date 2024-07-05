@@ -12,6 +12,10 @@ class Endpoints {
 
   //logout
   static const logout = '/api/auth/logout/';
+  //profile
+  static const userProfile = '/api/profile/';
+
+  static const aboutUs = '/api/about/';
 
   static const notification = '/api/notification/notifications/';
 
