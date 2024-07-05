@@ -3,7 +3,7 @@ class AppRoutes {
    static const mobileNumberScreen = '/loginScreen';
    static const otpScreen = '/otpScreen';
   static const deliveryListScreen = '/deliveryListScreen';
-   static const termsAndConditionScreen = '/loginScreen';
+   static const termsAndConditionScreen = '/termsAndConditionsScreen';
    static const privacyPolicyScreen = '/privacyPolicyScreen';
    static const aboutUsScreen = '/aboutUs';
    static const deliveryDetailsScreen = '/deliveryDetailsScreen';

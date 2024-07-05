@@ -12,6 +12,8 @@ import 'package:rasan_delivery/features/delivery/delivery_list/presentation/page
 import 'package:rasan_delivery/features/delivery/delivery_list/presentation/pages/delivery_list_screen.dart';
 import 'package:rasan_delivery/features/privacy_policy/presentation/pages/privacy_policy_screen.dart';
 import 'package:rasan_delivery/features/privacy_policy/privacy_policy_bindings.dart';
+import 'package:rasan_delivery/features/terms_and_condition/presentation/pages/terms_and_condition_screen.dart';
+import 'package:rasan_delivery/features/terms_and_condition/terms_and_condition_bindings.dart';
 import '../../features/authentication/mobile_number/mobile_number_bindings.dart';
 import '../../features/authentication/mobile_number/presentation/pages/mobile_number_screen.dart';
 import '../../features/profile/profile_home_screen/presentation/pages/profile_home_screen.dart';
@@ -70,14 +72,15 @@ class AppPages {
         name: AppRoutes.aboutUsScreen,
         page: () => AboutUsScreen(),
         binding: AboutUsBindings()),
-    //TODO change terms and conditions page
+
     GetPage(
         name: AppRoutes.termsAndConditionScreen,
-        page: () => MobileNumberScreen()),
+        page: () => TermsAndConditionScreen(),
+        binding: TermsAndConditionBindings()),
 
     GetPage(
         name: AppRoutes.privacyPolicyScreen,
         page: () => PrivacyPolicyScreen(),
-        binding : PrivacyPolicyBindings()),
+        binding: PrivacyPolicyBindings()),
   ];
 }
