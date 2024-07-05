@@ -139,7 +139,6 @@ class _DeliveryStartedScreenState extends State<DeliveryStartedScreen> {
                                     .shipping_address_details!.map_longitude!),
                                 double.parse(ordersListData
                                     .shipping_address_details!.map_latitude!));
-                            // Get.toNamed(AppRoutes.editProfileScreen);
                           },
                           child: Padding(
                             padding: const EdgeInsets.only(left: 0),
@@ -165,9 +164,7 @@ class _DeliveryStartedScreenState extends State<DeliveryStartedScreen> {
                             ),
                           ),
                         ) : const SizedBox(),
-                  /* const Text(
-                          "The map location is missing. Do you want to help by entering the coordinates?"),*/
-                  SizedBox(
+                 SizedBox(
                     height: 15.h,
                   ),
                   Text(

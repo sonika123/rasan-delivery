@@ -25,13 +25,7 @@ class DeliveryDetailsScreen extends StatefulWidget {
 
 class _DeliveryDetailsScreenState extends State<DeliveryDetailsScreen> {
   final DeliveryStatusController _deliveryStatusController = Get.find();
-  final DeliveryLocationController _deliveryLocationController = Get.find();
   final OrdersListData ordersListData = Get.arguments;
-
-  bool showLatLng = false;
-  final TextEditingController _latitudeTextController = TextEditingController();
-  final TextEditingController _longitutdeTextController =
-      TextEditingController();
 
   @override
   void initState() {
@@ -194,129 +188,6 @@ class _DeliveryDetailsScreenState extends State<DeliveryDetailsScreen> {
                         ),
                       )
                     : Container()
-
-
-                /*RichText(
-                        text: TextSpan(children: [
-                        TextSpan(
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium
-                                ?.copyWith(
-                                  color: AppColors.textColor,
-                                ),
-                            text:
-                                "The map location is missing. Do you want to help by entering the coordinates? "),
-                        TextSpan(
-                            style:
-                                const TextStyle(color: AppColors.primaryColor),
-                            text: "Click here",
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () async {
-                                // open lat long view
-                                setState(() {
-                                  showLatLng = !showLatLng;
-                                });
-                              }),
-                      ]))*/,
-
-                // location post layout
-                SizedBox(
-                  height: 10.h,
-                ),
-
-                Visibility(
-                  visible: showLatLng,
-                  child: Column(
-                    children: [
-                      TextField(
-                        controller: _latitudeTextController,
-                        // inputFormatters: [
-                        //   FilteringTextInputFormatter.allow(
-                        //       RegExp('^[0-9]{1,10}')),
-                        // ],
-                        keyboardType: TextInputType.number,
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleLarge!
-                            .copyWith(fontWeight: FontWeight.w500),
-                        decoration: InputDecoration(
-                          hintStyle: Theme.of(context)
-                              .textTheme
-                              .titleLarge!
-                              .copyWith(
-                                  color: AppColors.greyTextColor,
-                                  fontWeight: FontWeight.w500),
-                          border: const OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: AppColors.textColor)),
-                          hintText: 'Enter latitude',
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10.h,
-                      ),
-                      TextField(
-                        controller: _longitutdeTextController,
-                        // inputFormatters: [
-                        //   FilteringTextInputFormatter.allow(
-                        //       RegExp('^[0-9]{1,10}')),
-                        // ],
-                        onTapOutside: (event) {
-                          FocusManager.instance.primaryFocus?.unfocus();
-                        },
-                        keyboardType: TextInputType.number,
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleLarge!
-                            .copyWith(fontWeight: FontWeight.w500),
-                        decoration: InputDecoration(
-                          hintStyle: Theme.of(context)
-                              .textTheme
-                              .titleLarge!
-                              .copyWith(
-                                  color: AppColors.greyTextColor,
-                                  fontWeight: FontWeight.w500),
-                          border: const OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: AppColors.textColor)),
-                          hintText: 'Enter longitude',
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10.h,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          //post lat long here
-                          String latitude = _latitudeTextController.text;
-                          String longitude = _longitutdeTextController.text;
-
-                          _deliveryLocationController.postDeliveryLocation(
-                              latitude,
-                              longitude,
-                              ordersListData.shipping_address_details!.id);
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: AppColors.primaryColor,
-                              borderRadius: BorderRadius.circular(5)),
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 16, horizontal: 26),
-                          child: Text(
-                            'Send Location',
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyLarge
-                                ?.copyWith(
-                                    color: AppColors.whiteColor,
-                                    fontWeight: FontWeight.w900),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
               ],
             ),
           ),

@@ -11,6 +11,7 @@ import '../../../../../core/theme/colors.dart';
 import '../../../../../core/utils/app_permission_handler.dart';
 import '../../../../../core/utils/map_utils.dart';
 import '../../domain/entities/delivery_details_response.dart';
+import '../controller/delivery_location_controller.dart';
 
 class ThankYouScreen extends StatefulWidget {
   const ThankYouScreen({Key? key}) : super(key: key);
@@ -21,6 +22,7 @@ class ThankYouScreen extends StatefulWidget {
 
 class _ThankYouScreenState extends State<ThankYouScreen> {
   final OrdersListData ordersListData = Get.arguments;
+  final DeliveryLocationController _deliveryLocationController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -30,27 +32,32 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.arrow_back_ios_new_sharp,
-                    size: 20,
-                    color: AppColors.primaryColor,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text('Go back to home screen',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyMedium
-                          ?.copyWith(color: AppColors.primaryDEF)),
-                ],
+            InkWell(
+              onTap: (){
+                Get.back();
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                   const Icon(
+                      Icons.arrow_back_ios_new_sharp,
+                      size: 20,
+                      color: AppColors.primaryColor,
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Text('Go back to home screen',
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium
+                            ?.copyWith(color: AppColors.primaryDEF)),
+                  ],
+                ),
               ),
             ),
             const SizedBox(
@@ -60,7 +67,11 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
               //var screenSize = MediaQuery.sizeOf(context);
               // width: MediaQuery.sizeOf(context).width,
               // height: MediaQuery.sizeOf(context).height * 0.5,
-              child: Icon(Icons.delivery_dining, size: 80,color: AppColors.primaryColor,),
+              child: Icon(
+                Icons.delivery_dining,
+                size: 80,
+                color: AppColors.primaryColor,
+              ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(
@@ -189,7 +200,6 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
     );
   }
 
-
   void sendLocation() async {
     late bool status;
     if (Platform.isIOS) {
@@ -199,21 +209,14 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
       status = await AppPermissionHandler.hasLocationPermission(Get.context!);
     }
     if (status) {
-      print("status is $status");
       final position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high,
       );
 
-      print("sonika location latitude is ${position.latitude} and longitude is ${position.longitude}");
-
-      // _locationController.lat.value = position.latitude;
-      // _locationController.long.value = position.longitude;
-      // addMarker(
-      //   LatLng(
-      //     position.latitude,
-      //     position.longitude,
-      //   ),
-      // );
+      String latitude = "${position.latitude}";
+      String longitude = "${position.longitude}";
+      _deliveryLocationController.postDeliveryLocation(
+          latitude, longitude, ordersListData.shipping_address_details!.id);
     }
   }
 }
