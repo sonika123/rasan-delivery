@@ -9,6 +9,10 @@ class Endpoints {
 
   static const login = '/api/auth/login/';
   static const requestOtp = '/api/auth/request/';
+
+  //logout
+  static const logout = '/api/auth/logout/';
+
   static const notification = '/api/notification/notifications/';
 
   //delivery list of user
@@ -20,6 +24,7 @@ class Endpoints {
 
   //post location lat lng
   static const postLatLng = '/api/profile/admin/address/detail/';
+
 
 
 }

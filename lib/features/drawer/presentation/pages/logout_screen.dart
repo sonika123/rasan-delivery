@@ -8,8 +8,9 @@ import 'package:get/get.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/utils/asset_path.dart';
 import '../../../../core/widgets/custom_button.dart';
+import '../../../authentication/logout/presentation/controllers/logout_controller.dart';
 class LogoutDialog {
-  // final logoutController = Get.put(LogOutController());
+  final logoutController = Get.put(LogOutController());
 
   void showLogoutDialog(BuildContext context) {
     showDialog(
@@ -84,9 +85,9 @@ class LogoutDialog {
                             bgColor: AppColors.primaryColor,
                             title: 'logout'.tr,
                             onPressed: () {
-                              // logoutController.logOutUser();
+                              logoutController.logOutUser();
                             },
-                            // isLoading: logoutController.isLoading.value,
+                            isLoading: logoutController.isLoading.value,
                           ),
                         ),
                       ),
