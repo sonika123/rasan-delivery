@@ -10,6 +10,8 @@ import 'package:rasan_delivery/features/delivery/delivery_list/presentation/page
 import 'package:rasan_delivery/features/delivery/delivery_list/delivery_bindings.dart';
 import 'package:rasan_delivery/features/delivery/delivery_list/presentation/pages/delivery_list_by_orderid_screen.dart';
 import 'package:rasan_delivery/features/delivery/delivery_list/presentation/pages/delivery_list_screen.dart';
+import 'package:rasan_delivery/features/privacy_policy/presentation/pages/privacy_policy_screen.dart';
+import 'package:rasan_delivery/features/privacy_policy/privacy_policy_bindings.dart';
 import '../../features/authentication/mobile_number/mobile_number_bindings.dart';
 import '../../features/authentication/mobile_number/presentation/pages/mobile_number_screen.dart';
 import '../../features/profile/profile_home_screen/presentation/pages/profile_home_screen.dart';
@@ -74,6 +76,8 @@ class AppPages {
         page: () => MobileNumberScreen()),
 
     GetPage(
-        name: AppRoutes.privacyPolicyScreen, page: () => MobileNumberScreen()),
+        name: AppRoutes.privacyPolicyScreen,
+        page: () => PrivacyPolicyScreen(),
+        binding : PrivacyPolicyBindings()),
   ];
 }
